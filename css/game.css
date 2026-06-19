@@ -565,15 +565,15 @@ html, body {
 .top-btn::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
+  left: 0;
+  top: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(180deg, transparent, rgba(201,169,110,0.2), transparent);
+  transition: top 0.5s ease;
 }
 .top-btn:hover::after {
-  left: 100%;
+  top: 100%;
 }
 
 /* 选项按钮悬停增强 */
@@ -592,15 +592,15 @@ html, body {
 .menu-btn::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
+  left: 0;
+  top: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.12), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(180deg, transparent, rgba(201,169,110,0.12), transparent);
+  transition: top 0.5s ease;
 }
 .menu-btn:hover::before {
-  left: 100%;
+  top: 100%;
 }
 
 /* 标题按钮悬停 */
@@ -611,15 +611,15 @@ html, body {
 .title-btn::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
+  left: 0;
+  top: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.15), transparent);
-  transition: left 0.6s ease;
+  background: linear-gradient(180deg, transparent, rgba(201,169,110,0.15), transparent);
+  transition: top 0.6s ease;
 }
 .title-btn:hover::after {
-  left: 100%;
+  top: 100%;
 }
 
 /* ===== 工具类 ===== */
