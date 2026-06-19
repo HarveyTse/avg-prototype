@@ -287,13 +287,27 @@ class Game {
 document.addEventListener('DOMContentLoaded', () => {
   window.game = new Game();
 
-  // 光标光晕跟随
+  // 光标光晕跟随（带延迟拖尾）
   const glow = document.getElementById('cursor-glow');
   if (glow) {
+    let mouseX = 0, mouseY = 0;
+    let glowX = 0, glowY = 0;
+    const ease = 0.12; // 延迟系数，越小越拖尾
+
     document.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     });
+
+    const animate = () => {
+      glowX += (mouseX - glowX) * ease;
+      glowY += (mouseY - glowY) * ease;
+      glow.style.left = glowX + 'px';
+      glow.style.top = glowY + 'px';
+      requestAnimationFrame(animate);
+    };
+    animate();
+
     document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
     document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
   }
