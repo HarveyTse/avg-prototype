@@ -11,13 +11,16 @@ class Renderer {
       dialogBox: document.getElementById('dialog-box'),
       speakerName: document.getElementById('speaker-name'),
       dialogText: document.getElementById('dialog-text'),
+      dialogIndicator: document.getElementById('dialog-indicator'),
       narrationBox: document.getElementById('narration-box'),
       narrationText: document.getElementById('narration-text'),
+      narrationIndicator: document.getElementById('narration-indicator'),
       optionPanel: document.getElementById('option-panel'),
       optionList: document.getElementById('option-list'),
       transition: document.getElementById('transition-layer'),
       statusBar: document.getElementById('status-bar'),
       charLayer: document.getElementById('char-layer'),
+      hintOverlay: document.getElementById('hint-overlay'),
     };
 
     this.typingTimer = null;
@@ -80,13 +83,25 @@ class Renderer {
     this.el.narrationBox.classList.add('hidden');
     this.el.speakerName.textContent = speaker || '';
     this.el.speakerName.style.display = speaker ? '' : 'none';
+    this.hideIndicator();
     return this._typeText(this.el.dialogText, text);
   }
 
   showNarration(text) {
     this.el.dialogBox.classList.add('hidden');
     this.el.narrationBox.classList.remove('hidden');
+    this.hideIndicator();
     return this._typeText(this.el.narrationText, text);
+  }
+
+  showIndicator() {
+    this.el.dialogIndicator.classList.remove('hidden');
+    this.el.narrationIndicator.classList.remove('hidden');
+  }
+
+  hideIndicator() {
+    this.el.dialogIndicator.classList.add('hidden');
+    this.el.narrationIndicator.classList.add('hidden');
   }
 
   hideDialog() {
@@ -116,6 +131,7 @@ class Renderer {
         } else {
           this.isTyping = false;
           this.typingTimer = null;
+          this.typingResolve = null;
           resolve();
         }
       };

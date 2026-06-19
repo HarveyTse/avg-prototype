@@ -289,11 +289,24 @@ class CommandEngine {
   }
 
   async _waitForClick() {
+    // 自动播放或快进模式下不显示箭头，不等待点击
+    if (this._autoMode || this._skipMode) return;
+
+    // 显示点击箭头
+    this.renderer.showIndicator();
+
+    // 首次显示提示
+    if (!this._hintShown) {
+      this._hintShown = true;
+      this._showClickHint();
+    }
+
     return new Promise(resolve => {
       const handler = (e) => {
         if (e.target.closest('.option-btn') || e.target.closest('.top-btn') ||
             e.target.closest('.menu-btn') || e.target.closest('#menu-overlay') ||
-            e.target.closest('#save-overlay') || e.target.closest('#settings-overlay')) {
+            e.target.closest('#save-overlay') || e.target.closest('#settings-overlay') ||
+            e.target.closest('#hint-overlay')) {
           return;
         }
 
@@ -302,6 +315,7 @@ class CommandEngine {
           return;
         }
 
+        this.renderer.hideIndicator();
         document.removeEventListener('click', handler);
         document.removeEventListener('keydown', keyHandler);
         resolve();
@@ -317,6 +331,15 @@ class CommandEngine {
       document.addEventListener('click', handler);
       document.addEventListener('keydown', keyHandler);
     });
+  }
+
+  _showClickHint() {
+    const hint = this.renderer.el.hintOverlay;
+    if (!hint) return;
+    hint.classList.remove('hidden');
+    setTimeout(() => {
+      hint.classList.add('hidden');
+    }, 3000);
   }
 
   _wait(ms) {

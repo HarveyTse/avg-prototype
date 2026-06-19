@@ -554,6 +554,33 @@ html, body {
   50% { opacity: 0; }
 }
 
+/* 首次点击提示 */
+#hint-overlay {
+  position: absolute; inset: 0; z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  animation: hintFade 3s ease forwards;
+}
+.hint-text {
+  background: rgba(0,0,0,0.6);
+  color: var(--color-gold-light);
+  padding: 12px 28px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 2px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(201,169,110,0.2);
+}
+@keyframes hintFade {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 /* 响应式 */
 @media (max-width: 600px) {
   #dialog-box { margin: 0 12px 24px; min-height: 130px; }

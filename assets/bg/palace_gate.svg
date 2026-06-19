@@ -1,65 +1,156 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
   <defs>
     <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#4a2a6e"/>
-      <stop offset="40%" stop-color="#6a4080"/>
-      <stop offset="70%" stop-color="#8a5060"/>
-      <stop offset="100%" stop-color="#5a3040"/>
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="25%" stop-color="#2d1b4e"/>
+      <stop offset="50%" stop-color="#4a2c5e"/>
+      <stop offset="75%" stop-color="#6a3c4e"/>
+      <stop offset="100%" stop-color="#3a2030"/>
     </linearGradient>
-    <linearGradient id="wall" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#d44020"/>
-      <stop offset="100%" stop-color="#a83010"/>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c83820"/>
+      <stop offset="50%" stop-color="#a82818"/>
+      <stop offset="100%" stop-color="#882010"/>
     </linearGradient>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1508"/>
+      <stop offset="100%" stop-color="#1a0a04"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8dc" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#e8d080" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1818"/>
+      <stop offset="100%" stop-color="#1a0a0a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
+  
+  <!-- 天空渐变 -->
   <rect width="1200" height="800" fill="url(#sky)"/>
   
-  <!-- 云彩 -->
-  <ellipse cx="200" cy="120" rx="150" ry="40" fill="#8a6090" opacity="0.4"/>
-  <ellipse cx="800" cy="100" rx="120" ry="35" fill="#7a5080" opacity="0.35"/>
+  <!-- 星空 -->
+  <g opacity="0.6">
+    <circle cx="80" cy="60" r="1.2" fill="#fff"/><circle cx="180" cy="35" r="0.8" fill="#fff"/>
+    <circle cx="320" cy="80" r="1" fill="#fff"/><circle cx="450" cy="25" r="1.2" fill="#fff"/>
+    <circle cx="580" cy="70" r="0.8" fill="#fff"/><circle cx="720" cy="40" r="1" fill="#fff"/>
+    <circle cx="850" cy="55" r="1.2" fill="#fff"/><circle cx="1000" cy="30" r="0.8" fill="#fff"/>
+    <circle cx="1100" cy="75" r="1" fill="#fff"/><circle cx="150" cy="110" r="0.6" fill="#fff"/>
+    <circle cx="400" cy="130" r="0.8" fill="#fff"/><circle cx="650" cy="105" r="0.6" fill="#fff"/>
+  </g>
   
   <!-- 月亮 -->
-  <circle cx="950" cy="150" r="100" fill="#c9a96e" opacity="0.2"/>
-  <circle cx="950" cy="150" r="45" fill="#fff8dc" opacity="0.8"/>
+  <circle cx="960" cy="140" r="120" fill="url(#moonGlow)"/>
+  <circle cx="960" cy="140" r="42" fill="#fff8dc" opacity="0.85"/>
+  <circle cx="948" cy="132" r="8" fill="#e8d8a0" opacity="0.3"/>
   
-  <!-- 远山 -->
-  <path d="M0 420 Q200 360 400 400 Q600 340 800 380 Q1000 330 1200 370 L1200 500 L0 500Z" fill="#3a2a50" opacity="0.7"/>
+  <!-- 远山层次 -->
+  <path d="M0 450 Q80 400 180 430 Q280 380 400 410 Q520 360 650 395 Q780 350 900 380 Q1020 340 1200 370 L1200 520 L0 520Z" fill="#1a0a20" opacity="0.5"/>
+  <path d="M0 470 Q120 430 250 455 Q380 410 500 440 Q620 400 750 430 Q880 395 1000 420 Q1100 400 1200 415 L1200 530 L0 530Z" fill="#120818" opacity="0.6"/>
   
-  <!-- 城墙 -->
-  <rect x="0" y="480" width="1200" height="320" fill="#2a1515"/>
+  <!-- 城墙基座 -->
+  <rect x="0" y="500" width="1200" height="300" fill="#180808"/>
   
   <!-- 宫门主体 -->
-  <rect x="350" y="200" width="500" height="330" fill="url(#wall)" rx="4"/>
-  <rect x="350" y="190" width="500" height="20" fill="#e8c070" opacity="0.7"/>
+  <rect x="320" y="195" width="560" height="340" fill="url(#wallGrad)" rx="3"/>
+  
+  <!-- 墙面纹理 -->
+  <g opacity="0.15">
+    <line x1="320" y1="250" x2="880" y2="250" stroke="#000" stroke-width="0.5"/>
+    <line x1="320" y1="305" x2="880" y2="305" stroke="#000" stroke-width="0.5"/>
+    <line x1="320" y1="360" x2="880" y2="360" stroke="#000" stroke-width="0.5"/>
+    <line x1="320" y1="415" x2="880" y2="415" stroke="#000" stroke-width="0.5"/>
+    <line x1="320" y1="470" x2="880" y2="470" stroke="#000" stroke-width="0.5"/>
+  </g>
+  
+  <!-- 金色腰线 -->
+  <rect x="320" y="188" width="560" height="10" fill="#d4a850" opacity="0.7"/>
+  <rect x="320" y="530" width="560" height="6" fill="#d4a850" opacity="0.5"/>
   
   <!-- 屋顶 -->
-  <polygon points="300,200 600,100 900,200" fill="#5a2010"/>
-  <polygon points="320,200 600,115 880,200" fill="#4a1808"/>
+  <polygon points="270,195 600,90 930,195" fill="url(#roofGrad)"/>
+  <polygon points="285,195 600,100 915,195" fill="#1a0a04"/>
+  
+  <!-- 屋脊装饰 -->
+  <line x1="600" y1="90" x2="600" y2="82" stroke="#d4a850" stroke-width="2"/>
+  <circle cx="600" cy="80" r="4" fill="#d4a850" opacity="0.8"/>
   
   <!-- 飞檐 -->
-  <path d="M300,200 Q270,185 250,195" stroke="#e8c070" stroke-width="2.5" fill="none" opacity="0.7"/>
-  <path d="M900,200 Q930,185 950,195" stroke="#e8c070" stroke-width="2.5" fill="none" opacity="0.7"/>
+  <path d="M270,195 Q245,180 225,188 Q255,185 270,195" fill="#d4a850" opacity="0.6"/>
+  <path d="M930,195 Q955,180 975,188 Q945,185 930,195" fill="#d4a850" opacity="0.6"/>
   
   <!-- 大门 -->
-  <rect x="500" y="320" width="200" height="210" fill="#2a1008" rx="4"/>
-  <circle cx="560" cy="430" r="14" fill="#e8c070" opacity="0.9"/>
-  <circle cx="640" cy="430" r="14" fill="#e8c070" opacity="0.9"/>
+  <rect x="490" y="330" width="220" height="205" fill="#0a0503" rx="3"/>
+  <rect x="494" y="334" width="212" height="197" fill="#120808" rx="2"/>
   
-  <!-- 石狮 -->
-  <ellipse cx="440" cy="510" rx="35" ry="45" fill="#6a5a50" opacity="0.9"/>
-  <ellipse cx="760" cy="510" rx="35" ry="45" fill="#6a5a50" opacity="0.9"/>
+  <!-- 门钉 -->
+  <g fill="#c9a050" opacity="0.7">
+    <circle cx="545" cy="380" r="5"/><circle cx="545" cy="410" r="5"/>
+    <circle cx="545" cy="440" r="5"/><circle cx="545" cy="470" r="5"/>
+    <circle cx="655" cy="380" r="5"/><circle cx="655" cy="410" r="5"/>
+    <circle cx="655" cy="440" r="5"/><circle cx="655" cy="470" r="5"/>
+  </g>
+  
+  <!-- 门环 -->
+  <circle cx="575" cy="435" r="12" fill="none" stroke="#c9a050" stroke-width="2.5" opacity="0.8"/>
+  <circle cx="625" cy="435" r="12" fill="none" stroke="#c9a050" stroke-width="2.5" opacity="0.8"/>
+  
+  <!-- 石狮左 -->
+  <g transform="translate(400,490)">
+    <ellipse cx="0" cy="15" rx="38" ry="30" fill="#5a5048"/>
+    <ellipse cx="0" cy="-10" rx="22" ry="20" fill="#6a6058"/>
+    <circle cx="-8" cy="-18" r="3" fill="#1a1510"/>
+    <circle cx="8" cy="-18" r="3" fill="#1a1510"/>
+    <ellipse cx="0" cy="-8" rx="6" ry="4" fill="#4a4038"/>
+  </g>
+  
+  <!-- 石狮右 -->
+  <g transform="translate(800,490)">
+    <ellipse cx="0" cy="15" rx="38" ry="30" fill="#5a5048"/>
+    <ellipse cx="0" cy="-10" rx="22" ry="20" fill="#6a6058"/>
+    <circle cx="-8" cy="-18" r="3" fill="#1a1510"/>
+    <circle cx="8" cy="-18" r="3" fill="#1a1510"/>
+    <ellipse cx="0" cy="-8" rx="6" ry="4" fill="#4a4038"/>
+  </g>
   
   <!-- 灯笼 -->
-  <rect x="375" y="245" width="22" height="35" fill="#e84030" opacity="0.9" rx="3"/>
-  <rect x="803" y="245" width="22" height="35" fill="#e84030" opacity="0.9" rx="3"/>
-  <circle cx="386" cy="235" r="10" fill="#ff8060" opacity="0.6"/>
-  <circle cx="814" cy="235" r="10" fill="#ff8060" opacity="0.6"/>
+  <g filter="url(#glow)">
+    <rect x="355" y="240" width="24" height="38" fill="#d83828" rx="4" opacity="0.9"/>
+    <rect x="358" y="236" width="18" height="6" fill="#c9a050" rx="2"/>
+    <rect x="358" y="278" width="18" height="6" fill="#c9a050" rx="2"/>
+    <ellipse cx="367" cy="259" rx="8" ry="12" fill="#ff6050" opacity="0.4"/>
+  </g>
+  <g filter="url(#glow)">
+    <rect x="821" y="240" width="24" height="38" fill="#d83828" rx="4" opacity="0.9"/>
+    <rect x="824" y="236" width="18" height="6" fill="#c9a050" rx="2"/>
+    <rect x="824" y="278" width="18" height="6" fill="#c9a050" rx="2"/>
+    <ellipse cx="833" cy="259" rx="8" ry="12" fill="#ff6050" opacity="0.4"/>
+  </g>
   
   <!-- 地面 -->
-  <rect x="0" y="550" width="1200" height="250" fill="#2a1818"/>
+  <rect x="0" y="560" width="1200" height="240" fill="url(#groundGrad)"/>
   
-  <!-- 落叶 -->
-  <circle cx="200" cy="350" r="3" fill="#e8c070" opacity="0.7"/>
-  <circle cx="450" cy="280" r="2.5" fill="#e8c070" opacity="0.6"/>
-  <circle cx="750" cy="320" r="3" fill="#e8c070" opacity="0.6"/>
-  <circle cx="1050" cy="300" r="2.5" fill="#e8c070" opacity="0.5"/>
+  <!-- 石板路 -->
+  <g opacity="0.2">
+    <rect x="500" y="560" width="200" height="240" fill="#3a2a20"/>
+    <line x1="500" y1="600" x2="700" y2="600" stroke="#4a3a28" stroke-width="1"/>
+    <line x1="500" y1="640" x2="700" y2="640" stroke="#4a3a28" stroke-width="1"/>
+    <line x1="500" y1="680" x2="700" y2="680" stroke="#4a3a28" stroke-width="1"/>
+    <line x1="500" y1="720" x2="700" y2="720" stroke="#4a3a28" stroke-width="1"/>
+    <line x1="500" y1="760" x2="700" y2="760" stroke="#4a3a28" stroke-width="1"/>
+  </g>
+  
+  <!-- 飘落花瓣 -->
+  <g opacity="0.5">
+    <ellipse cx="180" cy="320" rx="3" ry="2" fill="#e8a0a0" transform="rotate(25,180,320)"/>
+    <ellipse cx="420" cy="260" rx="2.5" ry="1.5" fill="#e8b0b0" transform="rotate(-15,420,260)"/>
+    <ellipse cx="780" cy="290" rx="3" ry="2" fill="#e8a0a0" transform="rotate(40,780,290)"/>
+    <ellipse cx="1050" cy="310" rx="2" ry="1.5" fill="#e8b0b0" transform="rotate(-30,1050,310)"/>
+    <ellipse cx="300" cy="380" rx="2.5" ry="1.8" fill="#e8a8a0" transform="rotate(10,300,380)"/>
+  </g>
 </svg>
