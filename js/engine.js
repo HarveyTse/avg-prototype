@@ -85,6 +85,7 @@ class CommandEngine {
     switch (cmd.type) {
       case 'bg':
         this.renderer.setBackground(cmd.src, cmd.transition || 'fade');
+        if (window.game && window.game.audio) window.game.audio.playTransition();
         if (cmd.wait) await this._wait(cmd.wait);
         break;
 
@@ -94,6 +95,7 @@ class CommandEngine {
         break;
 
       case 'text':
+        if (window.game && window.game.audio) window.game.audio.playPage();
         if (cmd.speaker) {
           await this.renderer.showDialog(cmd.speaker, cmd.text);
         } else {
@@ -105,6 +107,7 @@ class CommandEngine {
         break;
 
       case 'narration':
+        if (window.game && window.game.audio) window.game.audio.playPage();
         await this.renderer.showNarration(cmd.text);
         if (!this._skipMode) {
           await this._waitForClick();
@@ -120,6 +123,7 @@ class CommandEngine {
           break;
         }
         const choice = await this.renderer.showOptions(processed);
+        if (window.game && window.game.audio) window.game.audio.playSelect();
         const selected = processed[choice];
         if (selected.actions) {
           for (const action of selected.actions) {
@@ -155,6 +159,10 @@ class CommandEngine {
 
       case 'modify':
         this.vars.modify(cmd.name, cmd.op, cmd.value);
+        if (window.game && window.game.audio) {
+          const val = this.vars.get(cmd.name);
+          window.game.audio.playStatChange(cmd.op === '+' || cmd.op === 'add');
+        }
         if (this.onVarsChange) this.onVarsChange(this.vars.getAll());
         break;
 

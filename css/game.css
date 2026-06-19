@@ -536,6 +536,102 @@ html, body {
   100% { background: transparent; }
 }
 
+/* ===== 光标交互 ===== */
+/* 自定义光标 */
+#game-root {
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="%23c9a96e" opacity="0.8"/><circle cx="12" cy="12" r="8" fill="none" stroke="%23c9a96e" stroke-width="1" opacity="0.4"/></svg>') 12 12, auto;
+}
+
+/* 光标跟随光晕 */
+.cursor-glow {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  mix-blend-mode: screen;
+}
+
+/* 按钮悬停光效增强 */
+.top-btn {
+  position: relative;
+  overflow: hidden;
+}
+.top-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(201,169,110,0.3), transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s, opacity 0.4s;
+  opacity: 0;
+}
+.top-btn:hover::after {
+  width: 150%;
+  height: 200%;
+  opacity: 1;
+}
+
+/* 选项按钮悬停增强 */
+.option-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+}
+.option-btn:hover {
+  box-shadow: 0 0 30px rgba(201,169,110,0.15), inset 0 0 20px rgba(201,169,110,0.05);
+}
+
+/* 菜单按钮悬停 */
+.menu-btn {
+  position: relative;
+  overflow: hidden;
+}
+.menu-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.1), transparent);
+  transition: left 0.5s;
+}
+.menu-btn:hover::before {
+  left: 100%;
+}
+
+/* 标题按钮悬停 */
+.title-btn {
+  position: relative;
+  overflow: hidden;
+}
+.title-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(201,169,110,0.1), transparent 30%);
+  animation: rotateGlow 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.title-btn:hover::after {
+  opacity: 1;
+}
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* ===== 工具类 ===== */
 .hidden { display: none !important; }
 

@@ -18,21 +18,57 @@ class Game {
 
   _bindEvents() {
     document.getElementById('btn-new-game').addEventListener('click', () => {
-      this.audio.playSfx('assets/audio/bgm_guzheng.mp3', 0.3);
+      this.audio.playClick();
       this.newGame();
     });
-    document.getElementById('btn-continue').addEventListener('click', () => this.continueGame());
-    document.getElementById('btn-about').addEventListener('click', () => this.showAbout());
-    document.getElementById('btn-auto').addEventListener('click', (e) => this.toggleAuto(e.target));
-    document.getElementById('btn-skip').addEventListener('click', (e) => this.toggleSkip(e.target));
-    document.getElementById('btn-menu').addEventListener('click', () => this.showMenu());
-    document.getElementById('menu-save').addEventListener('click', () => this.showSavePanel('save'));
-    document.getElementById('menu-load').addEventListener('click', () => this.showSavePanel('load'));
-    document.getElementById('menu-settings').addEventListener('click', () => this.showSettings());
-    document.getElementById('menu-title').addEventListener('click', () => this.backToTitle());
-    document.getElementById('menu-close').addEventListener('click', () => this.hideMenu());
-    document.getElementById('save-close').addEventListener('click', () => this.hideSavePanel());
-    document.getElementById('settings-close').addEventListener('click', () => this.hideSettings());
+    document.getElementById('btn-continue').addEventListener('click', () => {
+      this.audio.playClick();
+      this.continueGame();
+    });
+    document.getElementById('btn-about').addEventListener('click', () => {
+      this.audio.playClick();
+      this.showAbout();
+    });
+    document.getElementById('btn-auto').addEventListener('click', (e) => {
+      this.audio.playClick();
+      this.toggleAuto(e.target);
+    });
+    document.getElementById('btn-skip').addEventListener('click', (e) => {
+      this.audio.playClick();
+      this.toggleSkip(e.target);
+    });
+    document.getElementById('btn-menu').addEventListener('click', () => {
+      this.audio.playClick();
+      this.showMenu();
+    });
+    document.getElementById('menu-save').addEventListener('click', () => {
+      this.audio.playClick();
+      this.showSavePanel('save');
+    });
+    document.getElementById('menu-load').addEventListener('click', () => {
+      this.audio.playClick();
+      this.showSavePanel('load');
+    });
+    document.getElementById('menu-settings').addEventListener('click', () => {
+      this.audio.playClick();
+      this.showSettings();
+    });
+    document.getElementById('menu-title').addEventListener('click', () => {
+      this.audio.playClick();
+      this.backToTitle();
+    });
+    document.getElementById('menu-close').addEventListener('click', () => {
+      this.audio.playClick();
+      this.hideMenu();
+    });
+    document.getElementById('save-close').addEventListener('click', () => {
+      this.audio.playClick();
+      this.hideSavePanel();
+    });
+    document.getElementById('settings-close').addEventListener('click', () => {
+      this.audio.playClick();
+      this.hideSettings();
+    });
 
     // 音量控制
     document.getElementById('setting-text-speed').addEventListener('input', (e) => {
@@ -106,8 +142,7 @@ class Game {
     this.renderer.updateStats(this.vars.getAll());
     this.engine.loadStory(STORY_DATA);
     this.engine.startScene('scene_001');
-    // 标题音乐
-    this.audio.playBgm('assets/audio/bgm_chinese.mp3');
+    this.audio.playBgm();
   }
 
   continueGame() {
@@ -122,7 +157,7 @@ class Game {
     this.renderer.updateStats(this.vars.getAll());
     this.engine.loadStory(STORY_DATA);
     this.engine.restoreState(data);
-    this.audio.playBgm('assets/audio/bgm_chinese.mp3');
+    this.audio.playBgm();
   }
 
   showMenu() {
@@ -249,4 +284,17 @@ class Game {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => { window.game = new Game(); });
+document.addEventListener('DOMContentLoaded', () => {
+  window.game = new Game();
+
+  // 光标光晕跟随
+  const glow = document.getElementById('cursor-glow');
+  if (glow) {
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
+  }
+});
