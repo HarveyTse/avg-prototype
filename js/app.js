@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (glow) {
     let mouseX = 0, mouseY = 0;
     let glowX = 0, glowY = 0;
-    const ease = 0.12; // 延迟系数，越小越拖尾
+    const ease = 0.12;
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
@@ -310,5 +310,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
     document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
+  }
+
+  // 点击特效：按钮高光 / 空白处波纹
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.top-btn, .menu-btn, .title-btn, .option-btn');
+    if (btn) {
+      // 按钮点击：内部高光
+      const flash = document.createElement('div');
+      flash.className = 'btn-flash';
+      btn.style.position = 'relative';
+      btn.appendChild(flash);
+      setTimeout(() => flash.remove(), 400);
+    } else {
+      // 空白处点击：波纹扩散
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple-effect';
+      ripple.style.left = e.clientX + 'px';
+      ripple.style.top = e.clientY + 'px';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    }
+  });
+
+  // 触摸设备：禁用光标光晕，改用触摸反馈
+  if ('ontouchstart' in window) {
+    document.getElementById('cursor-glow')?.remove();
   }
 });

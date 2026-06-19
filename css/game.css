@@ -557,69 +557,54 @@ html, body {
   will-change: left, top;
 }
 
-/* 按钮悬停光效增强 */
-.top-btn {
-  position: relative;
-  overflow: hidden;
+/* 点击波纹效果 */
+.ripple-effect {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,169,110,0.4);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleExpand 0.6s ease-out forwards;
 }
-.top-btn::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: -100%;
-  width: 100%;
-  height: 200%;
-  background: linear-gradient(180deg, transparent 10%, rgba(201,169,110,0.25) 40%, rgba(201,169,110,0.35) 50%, rgba(201,169,110,0.25) 60%, transparent 90%);
-  transition: top 0.5s ease;
-}
-.top-btn:hover::after {
-  top: 0%;
+@keyframes rippleExpand {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
 }
 
-/* 选项按钮悬停增强 */
-.option-btn {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+/* 按钮点击高光 */
+.btn-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,169,110,0.4) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: inherit;
+  animation: flashFade 0.4s ease-out forwards;
 }
-.option-btn:hover {
-  box-shadow: 0 0 30px rgba(201,169,110,0.15), inset 0 0 20px rgba(201,169,110,0.05);
+@keyframes flashFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
-/* 菜单按钮悬停 */
-.menu-btn {
-  position: relative;
-  overflow: hidden;
-}
-.menu-btn::before {
+/* 按钮悬停时的呼吸高光 */
+.top-btn::before,
+.menu-btn::before,
+.title-btn::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: -100%;
-  width: 100%;
-  height: 200%;
-  background: linear-gradient(180deg, transparent 10%, rgba(201,169,110,0.18) 40%, rgba(201,169,110,0.25) 50%, rgba(201,169,110,0.18) 60%, transparent 90%);
-  transition: top 0.5s ease;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,169,110,0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 1;
 }
-.menu-btn:hover::before {
-  top: 0%;
-}
-
-/* 标题按钮悬停 */
-.title-btn {
-  position: relative;
-  overflow: hidden;
-}
-.title-btn::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: -100%;
-  width: 100%;
-  height: 200%;
-  background: linear-gradient(180deg, transparent 10%, rgba(201,169,110,0.2) 40%, rgba(201,169,110,0.3) 50%, rgba(201,169,110,0.2) 60%, transparent 90%);
-  transition: top 0.6s ease;
-}
-.title-btn:hover::after {
-  top: 0%;
+.top-btn:hover::before,
+.menu-btn:hover::before,
+.title-btn:hover::before {
+  opacity: 1;
 }
 
 /* ===== 工具类 ===== */
