@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="pavSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a5a"/>
+      <stop offset="100%" stop-color="#2a2a4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#pavSky)"/>
+  
+  <!-- 假山 -->
+  <path d="M0 500 Q100 380 200 420 Q300 320 400 380 L400 600 L0 600Z" fill="#4a4a45" opacity="0.7"/>
+  
+  <!-- 亭子 -->
+  <rect x="500" y="300" width="200" height="180" fill="none"/>
+  
+  <!-- 亭柱 -->
+  <rect x="520" y="350" width="8" height="150" fill="#7a5a30" opacity="0.9"/>
+  <rect x="672" y="350" width="8" height="150" fill="#7a5a30" opacity="0.9"/>
+  
+  <!-- 亭顶 -->
+  <polygon points="480,350 600,260 720,350" fill="#4a2a15" stroke="#e8c070" stroke-width="1.5" opacity="0.9"/>
+  <polygon points="490,350 600,270 710,350" fill="#3a1a0a"/>
+  
+  <!-- 飞檐 -->
+  <path d="M480,350 Q460,340 450,345" stroke="#e8c070" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M720,350 Q740,340 750,345" stroke="#e8c070" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- 石凳 -->
+  <rect x="540" y="480" width="120" height="15" fill="#5a5040" rx="3"/>
+  <rect x="550" y="495" width="20" height="20" fill="#5a5040"/>
+  <rect x="630" y="495" width="20" height="20" fill="#5a5040"/>
+  
+  <!-- 琴 -->
+  <ellipse cx="600" cy="470" rx="40" ry="8" fill="#6a5030" opacity="0.8"/>
+  
+  <!-- 水面 -->
+  <rect x="0" y="550" width="1200" height="250" fill="#1a2530" opacity="0.7"/>
+  <ellipse cx="600" cy="580" rx="300" ry="50" fill="#2a3540" opacity="0.4"/>
+  
+  <!-- 月光倒影 -->
+  <ellipse cx="600" cy="600" rx="60" ry="20" fill="#e8c070" opacity="0.12"/>
+  
+  <!-- 月亮 -->
+  <circle cx="200" cy="150" r="60" fill="#e8c070" opacity="0.15"/>
+  <circle cx="200" cy="150" r="25" fill="#fff8dc" opacity="0.5"/>
+</svg>

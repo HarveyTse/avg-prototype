@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="teaBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a2a18"/>
+      <stop offset="100%" stop-color="#2a1a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#teaBg)"/>
+  
+  <!-- 墙壁 -->
+  <rect x="0" y="0" width="1200" height="500" fill="#3a3020" opacity="0.6"/>
+  
+  <!-- 窗户 -->
+  <rect x="200" y="100" width="150" height="200" fill="#2a4035" opacity="0.7"/>
+  <line x1="275" y1="100" x2="275" y2="300" stroke="#5a4a30" stroke-width="4"/>
+  <line x1="200" y1="200" x2="350" y2="200" stroke="#5a4a30" stroke-width="4"/>
+  
+  <!-- 茶桌 -->
+  <rect x="400" y="400" width="400" height="120" fill="#5a4a30" rx="5"/>
+  <rect x="420" y="390" width="360" height="15" fill="#6a5a38"/>
+  
+  <!-- 茶具 -->
+  <ellipse cx="550" cy="385" rx="25" ry="10" fill="#7a6a48"/>
+  <rect x="545" y="370" width="10" height="15" fill="#7a6a48"/>
+  <ellipse cx="650" cy="385" rx="20" ry="8" fill="#7a6a48"/>
+  
+  <!-- 椅子 -->
+  <rect x="350" y="450" width="60" height="80" fill="#5a4a30" rx="3"/>
+  <rect x="790" y="450" width="60" height="80" fill="#5a4a30" rx="3"/>
+  
+  <!-- 地面 -->
+  <rect x="0" y="550" width="1200" height="250" fill="#2a1a0a"/>
+  
+  <!-- 热气 -->
+  <path d="M550 360 Q555 340 550 320" stroke="#e8c070" stroke-width="1.5" fill="none" opacity="0.25"/>
+  <path d="M560 360 Q565 335 560 310" stroke="#e8c070" stroke-width="1.5" fill="none" opacity="0.2"/>
+</svg>

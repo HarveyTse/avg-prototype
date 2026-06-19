@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="throneBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a2010"/>
+      <stop offset="100%" stop-color="#1a1008"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#throneBg)"/>
+  
+  <!-- 龙椅台 -->
+  <rect x="400" y="400" width="400" height="200" fill="#4a3518"/>
+  <rect x="420" y="380" width="360" height="30" fill="#5a4520"/>
+  <rect x="440" y="360" width="320" height="25" fill="#6a5528"/>
+  
+  <!-- 龙椅 -->
+  <rect x="500" y="280" width="200" height="100" fill="#7a5525" rx="5"/>
+  <rect x="510" y="250" width="180" height="35" fill="#8a6530" rx="3"/>
+  
+  <!-- 椅背 -->
+  <rect x="520" y="180" width="160" height="75" fill="#6a4520" rx="3"/>
+  <circle cx="600" cy="200" r="28" fill="#e8c070" opacity="0.5"/>
+  
+  <!-- 龙纹 -->
+  <path d="M560 210 Q580 200 600 210 Q620 200 640 210" stroke="#e8c070" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- 扶手 -->
+  <rect x="480" y="310" width="25" height="60" fill="#7a5525" rx="3"/>
+  <rect x="695" y="310" width="25" height="60" fill="#7a5525" rx="3"/>
+  
+  <!-- 光晕 -->
+  <circle cx="600" cy="300" r="150" fill="#e8c070" opacity="0.08"/>
+  <circle cx="600" cy="300" r="80" fill="#e8c070" opacity="0.12"/>
+  
+  <!-- 地面 -->
+  <rect x="0" y="600" width="1200" height="200" fill="#1a1008"/>
+  
+  <!-- 地毯 -->
+  <rect x="500" y="600" width="200" height="200" fill="#5a2018" opacity="0.6"/>
+</svg>

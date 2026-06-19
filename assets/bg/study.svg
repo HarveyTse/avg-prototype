@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="studyBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a2a18"/>
+      <stop offset="100%" stop-color="#2a1a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#studyBg)"/>
+  
+  <!-- 书架 -->
+  <rect x="50" y="100" width="200" height="350" fill="#4a3520"/>
+  <rect x="50" y="100" width="200" height="12" fill="#5a4528"/>
+  <rect x="50" y="180" width="200" height="12" fill="#5a4528"/>
+  <rect x="50" y="260" width="200" height="12" fill="#5a4528"/>
+  <rect x="50" y="340" width="200" height="12" fill="#5a4528"/>
+  
+  <!-- 书 -->
+  <rect x="60" y="118" width="18" height="58" fill="#6a4530"/>
+  <rect x="85" y="122" width="15" height="54" fill="#5a3a25"/>
+  <rect x="108" y="115" width="20" height="60" fill="#7a4a35"/>
+  <rect x="138" y="120" width="16" height="55" fill="#6a3a28"/>
+  
+  <!-- 书桌 -->
+  <rect x="400" y="400" width="500" height="100" fill="#5a4a30" rx="5"/>
+  <rect x="420" y="390" width="460" height="15" fill="#6a5a38"/>
+  
+  <!-- 毛笔 -->
+  <line x1="500" y1="385" x2="500" y2="350" stroke="#3a2a18" stroke-width="4"/>
+  <circle cx="500" cy="345" r="5" fill="#2a1a08"/>
+  
+  <!-- 纸张 -->
+  <rect x="550" y="370" width="80" height="20" fill="#f5f0e0" opacity="0.5"/>
+  
+  <!-- 砚台 -->
+  <ellipse cx="700" cy="385" rx="22" ry="12" fill="#2a2a2a"/>
+  
+  <!-- 窗户 -->
+  <rect x="900" y="100" width="150" height="200" fill="#2a4035" opacity="0.7"/>
+  <line x1="975" y1="100" x2="975" y2="300" stroke="#5a4a30" stroke-width="4"/>
+  <line x1="900" y1="200" x2="1050" y2="200" stroke="#5a4a30" stroke-width="4"/>
+  
+  <!-- 地面 -->
+  <rect x="0" y="550" width="1200" height="250" fill="#2a1a0a"/>
+</svg>

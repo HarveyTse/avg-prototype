@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g2Sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a5a3a"/>
+      <stop offset="100%" stop-color="#2a4a2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g2Sky)"/>
+  
+  <!-- 桃花树 -->
+  <rect x="300" y="200" width="30" height="250" fill="#5a3520"/>
+  <ellipse cx="315" cy="180" rx="120" ry="100" fill="#6a4045" opacity="0.8"/>
+  <circle cx="280" cy="160" r="10" fill="#e8c070" opacity="0.5"/>
+  <circle cx="320" cy="140" r="8" fill="#e8c070" opacity="0.4"/>
+  <circle cx="350" cy="170" r="9" fill="#e8c070" opacity="0.45"/>
+  
+  <!-- 石桥 -->
+  <path d="M500 500 Q600 450 700 500" stroke="#5a5040" stroke-width="18" fill="none"/>
+  <path d="M500 500 Q600 450 700 500" stroke="#6a6048" stroke-width="10" fill="none"/>
+  
+  <!-- 水面 -->
+  <rect x="0" y="520" width="1200" height="280" fill="#1a3040" opacity="0.6"/>
+  <ellipse cx="600" cy="580" rx="400" ry="60" fill="#2a4050" opacity="0.4"/>
+  
+  <!-- 荷叶 -->
+  <ellipse cx="450" cy="560" rx="32" ry="16" fill="#3a6040" opacity="0.6"/>
+  <ellipse cx="750" cy="570" rx="28" ry="14" fill="#3a6040" opacity="0.5"/>
+  
+  <!-- 远山 -->
+  <path d="M0 400 Q200 350 400 380 Q600 340 800 370 Q1000 330 1200 360 L1200 450 L0 450Z" fill="#2a4a30" opacity="0.5"/>
+</svg>

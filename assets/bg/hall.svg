@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="hallBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a2a15"/>
+      <stop offset="100%" stop-color="#2a1a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#hallBg)"/>
+  
+  <!-- 大殿柱子 -->
+  <rect x="100" y="80" width="35" height="520" fill="#c84010" opacity="0.9"/>
+  <rect x="1065" y="80" width="35" height="520" fill="#c84010" opacity="0.9"/>
+  <rect x="300" y="80" width="28" height="520" fill="#a83508" opacity="0.7"/>
+  <rect x="872" y="80" width="28" height="520" fill="#a83508" opacity="0.7"/>
+  
+  <!-- 柱头 -->
+  <rect x="93" y="70" width="48" height="18" fill="#e8c070" opacity="0.8"/>
+  <rect x="1059" y="70" width="48" height="18" fill="#e8c070" opacity="0.8"/>
+  
+  <!-- 地面 -->
+  <rect x="0" y="600" width="1200" height="200" fill="#4a3520"/>
+  <line x1="0" y1="600" x2="1200" y2="600" stroke="#e8c070" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- 地砖 -->
+  <g opacity="0.25">
+    <line x1="0" y1="650" x2="1200" y2="650" stroke="#e8c070"/>
+    <line x1="0" y1="700" x2="1200" y2="700" stroke="#e8c070"/>
+    <line x1="0" y1="750" x2="1200" y2="750" stroke="#e8c070"/>
+    <line x1="200" y1="600" x2="200" y2="800" stroke="#e8c070"/>
+    <line x1="400" y1="600" x2="400" y2="800" stroke="#e8c070"/>
+    <line x1="600" y1="600" x2="600" y2="800" stroke="#e8c070"/>
+    <line x1="800" y1="600" x2="800" y2="800" stroke="#e8c070"/>
+    <line x1="1000" y1="600" x2="1000" y2="800" stroke="#e8c070"/>
+  </g>
+  
+  <!-- 龙椅台 -->
+  <rect x="450" y="440" width="300" height="35" fill="#5a4a28"/>
+  <rect x="480" y="410" width="240" height="35" fill="#6a5a30"/>
+  
+  <!-- 光晕 -->
+  <circle cx="600" cy="340" r="200" fill="#e8c070" opacity="0.08"/>
+  <circle cx="600" cy="340" r="100" fill="#e8c070" opacity="0.12"/>
+</svg>

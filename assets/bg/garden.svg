@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="gardenSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a6a4a"/>
+      <stop offset="50%" stop-color="#2a5a3a"/>
+      <stop offset="100%" stop-color="#1a4a2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#gardenSky)"/>
+  
+  <!-- 假山 -->
+  <path d="M100 480 Q150 340 220 380 Q280 280 340 350 Q380 300 420 430 L100 480Z" fill="#5a5a55" opacity="0.9"/>
+  <path d="M150 460 Q190 380 240 400 Q280 330 330 380 L150 460Z" fill="#4a7a4a" opacity="0.7"/>
+  
+  <!-- 柳树 -->
+  <rect x="800" y="210" width="22" height="240" fill="#5a4028"/>
+  <ellipse cx="811" cy="190" rx="130" ry="110" fill="#4a8a50" opacity="0.9"/>
+  <path d="M740 250 Q750 340 770 420" stroke="#5aaa55" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M860 240 Q870 330 880 410" stroke="#5aaa55" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M810 230 Q815 320 820 400" stroke="#5aaa55" stroke-width="3" fill="none" opacity="0.7"/>
+  
+  <!-- 花丛 -->
+  <circle cx="400" cy="490" r="28" fill="#8a4055" opacity="0.8"/>
+  <circle cx="455" cy="500" r="22" fill="#9a4560" opacity="0.7"/>
+  <circle cx="345" cy="510" r="20" fill="#8a4555" opacity="0.7"/>
+  <circle cx="700" cy="480" r="25" fill="#5a7a50" opacity="0.7"/>
+  
+  <!-- 小花 -->
+  <circle cx="500" cy="520" r="6" fill="#e8c070" opacity="0.8"/>
+  <circle cx="525" cy="515" r="5" fill="#e8c070" opacity="0.7"/>
+  <circle cx="512" cy="535" r="5.5" fill="#e8c070" opacity="0.75"/>
+  
+  <!-- 水池 -->
+  <ellipse cx="600" cy="590" rx="220" ry="90" fill="#2a5060" opacity="0.7"/>
+  <ellipse cx="600" cy="590" rx="200" ry="80" fill="#2a5565" opacity="0.6"/>
+  
+  <!-- 水面倒影 -->
+  <ellipse cx="600" cy="590" rx="120" ry="45" fill="#4a7080" opacity="0.4"/>
+  
+  <!-- 地面 -->
+  <rect x="0" y="540" width="1200" height="260" fill="#2a2518" opacity="0.9"/>
+  
+  <!-- 蝴蝶 -->
+  <path d="M500 340 Q512 328 518 334 Q512 340 500 340Z" fill="#e8c070" opacity="0.7"/>
+  <path d="M500 340 Q488 328 482 334 Q488 340 500 340Z" fill="#e8c070" opacity="0.7"/>
+</svg>
